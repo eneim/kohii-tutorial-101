@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() {
     val kohii = Kohii[this]
     kohii.register(this).addBucket(container)
 
-    kohii.setUp(videoUrl).bind(playerView)
+    kohii.setUp(videoUrl) {
+      tag = videoUrl
+    }
+      .bind(playerView)
   }
 }
